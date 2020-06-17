@@ -139,7 +139,7 @@ func (*DefaultClientSecurityHandler) Handle(c Conn) error {
 		}
 	}
 
-	if err := binary.Write(c, binary.BigEndian, cfg.SecurityHandlers[0].Type()); err != nil {
+	if err := binary.Write(c, binary.BigEndian, secType.Type()); err != nil {
 		return err
 	}
 
